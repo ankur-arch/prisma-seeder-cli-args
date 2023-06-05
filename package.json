@@ -3,11 +3,19 @@
   "license": "MIT",
   "scripts": {
     "studio": "prisma studio",
-    "reset:db": "prisma migrate reset",
+    "reset:db": "prisma migrate reset -f",
     "dev": "ts-node ./script.ts"
   },
   "dependencies": {
+    "@opentelemetry/exporter-jaeger": "^1.13.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.39.1",
+    "@opentelemetry/instrumentation": "^0.39.1",
+    "@opentelemetry/resources": "^1.13.0",
+    "@opentelemetry/sdk-trace-base": "^1.13.0",
+    "@opentelemetry/sdk-trace-node": "^1.13.0",
+    "@opentelemetry/semantic-conventions": "^1.13.0",
     "@prisma/client": "4.15.0",
+    "@prisma/instrumentation": "^4.15.0",
     "@types/node": "^20.2.5"
   },
   "prisma": {

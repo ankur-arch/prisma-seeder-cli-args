@@ -3,6 +3,7 @@ import { parseArgs } from "util";
 
 const options = {
   environment: { type: "string" as const, required: true },
+  clearDB: { type: "string" as const, required: true },
 };
 
 const prisma = new PrismaClient();
@@ -44,8 +45,10 @@ const prodSeed = async () => {
 
 async function main() {
   const {
-    values: { environment },
+    values: { environment, clearDB },
   } = parseArgs({ options });
+
+  console.log({ clearDB });
 
   switch (environment) {
     case "development": {
